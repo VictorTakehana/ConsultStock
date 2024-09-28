@@ -1,5 +1,6 @@
-<div>
-  <input type="text" name="text" [(ngModel)]="acao">
-  <button (click)="button()">pesquisar</button>
-  <span *ngIf="currentPrice"> {{currentPrice.c}} </span>
-</div>
+<body>
+  <h1 class="title">Consult Stock</h1>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</body>

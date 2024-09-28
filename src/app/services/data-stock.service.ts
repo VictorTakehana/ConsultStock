@@ -15,4 +15,8 @@ export class DataStockService {
     const url = `${this.baseUrl}/quote?symbol=${name}&token=${this.key}`;
     return this.http.get<any>(url);
   }
+  getTopStocks(symbol: string): Observable<string[]> {
+    const url = `${this.baseUrl}/stock/peers?symbol=${symbol}&token=${this.key}`
+    return this.http.get<string[]>(url);
+  }
 }

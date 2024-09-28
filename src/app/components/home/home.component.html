@@ -1,0 +1,24 @@
+<div class="home">
+    <div class="container-search">
+        <input type="text" name="symbol" placeholder="Enter a symbol" class="input-symbol" [(ngModel)]="valueSearch">
+        <button (click)="searchSymbol()" class="button-search">Search</button>
+    </div>
+    <div class="container-stocks">
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stocks of stocks">
+                    <td class="text-symbol">{{stocks.symbol}}</td>
+                    <td>{{stocks.data.c}}</td>
+                    <td [ngClass]="stocks.data.d > 0 ? 'gainer' : 'loser'">{{stocks.data.d}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>

@@ -4,18 +4,23 @@ import { AppComponent } from '../../app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from '../../components/home/home.component';
+import { RouterModule } from '@angular/router';
+import { routes } from '../../app.routes';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   bootstrap: [AppComponent]
 })
