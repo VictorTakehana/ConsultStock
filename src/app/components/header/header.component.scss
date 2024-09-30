@@ -1,0 +1,27 @@
+header{
+    background-color: #1e3f63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+}
+nav a{
+    text-decoration: none;
+    font-weight: 400;
+}
+.content-header{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    gap: 60px;
+}
+
+.home, .home-crypto{
+    // color: #29588a;
+    font-weight: bold !important;
+}

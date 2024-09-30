@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,18 @@ export class DataStockService {
 
   getCurrentPrice(name: string): Observable<any>{
     const url = `${this.baseUrl}/quote?symbol=${name}&token=${this.key}`;
-    return this.http.get<any>(url);
+    return this.http.get<any>(url).pipe(
+      catchError(error => {
+        return throwError(() => error)
+      })
+    );
   }
   getTopStocks(symbol: string): Observable<string[]> {
     const url = `${this.baseUrl}/stock/peers?symbol=${symbol}&token=${this.key}`
-    return this.http.get<string[]>(url);
+    return this.http.get<string[]>(url).pipe(
+      catchError(error => {
+        return throwError(() => error)
+      })
+    );
   }
 }

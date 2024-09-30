@@ -7,13 +7,17 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from '../../components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { routes } from '../../app.routes';
+import { HeaderComponent } from '../../components/header/header.component';
+import { HomeCryptoComponent } from '../../components/crypto/home-crypto/home-crypto.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent,
+    HomeCryptoComponent
   ],
   imports: [
     CommonModule,
